@@ -1,0 +1,108 @@
+﻿@model Project3.Models.ContactViewModel
+@{
+    ViewData["Title"] = "İletişim";
+}
+<html>
+<head>
+    <link href="~/css/Contact.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Contact Form -->
+    <div class="container">
+        <h2 class="mb-30">İletişim</h2>
+        @using (Html.BeginForm("Contact", "Pages", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <form class="login-form" action="#" method="post" novalidate id="frmServers">
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="_Name">Ad Soyad</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="Name" name="Name" placeholder="Adınız Soyadınız.." required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="_Created">Tarih</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="date" name="Created" id="Created" required />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="_Age">Yaş</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="Age" id="Age" placeholder="Yaşınız.." required />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="_City">Şehir</label>
+                    </div>
+                    <div class="col-75">
+                        <select name="City" id="City" tabindex="6" class="form-aux" data-label="İl seçiniz.">
+                            <option value="">İl seçiniz</option>
+                            @foreach (var city in Model.City)
+                            {
+                                <option value="@city">@city</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xxl-3 pull-right">
+                        <a id="btnSave" class="btn btn-xs btn-primary ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="serversFormPost()">Kaydet</a>
+                    </div>
+                </div>
+
+
+            </form>
+        }
+    </div>
+    <!--Contact Form End -->
+</body>
+</html>
+
+
+
+
+<script>
+    function serversFormPost() {
+
+        var frm = $('#frmServers');
+
+        $.ajax({
+            type: "POST",
+            url: "/Contact/Send",
+            data:
+            {
+                "Name": $("#Name").val(),
+                "selectedCity": $("#City").val(),
+                "Created": $("#Created").val(),
+                "Age": $("#Age").val(),
+
+            },
+            success: function (response) {
+                alert(response);
+                $('#Name').val('');
+                $('#Created').val('');
+                $('#Age').val('');
+                $('#City').val('');
+            },
+            failure: function (response) {
+                alert(response.responseText);
+            },
+            error: function (response) {
+                alert(response.responseText);
+            }
+
+        });
+    }
+</script>

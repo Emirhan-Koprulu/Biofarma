@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "ihqsl94Ev7kFhkvnuJl0jfTNXIpQMtj0CoL+tHC3gPENUplHaM/CAuiwOPVS+nSgab7gWUDDggiu6ADcopvFtQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\emirh\\Desktop\\YazilimSinav\\Project_2\\Project_2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\emirh\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\emirh\\.nuget\\packages\\restsharp\\106.12.0\\restsharp.106.12.0.nupkg.sha512"
+  ],
+  "logs": []
+}

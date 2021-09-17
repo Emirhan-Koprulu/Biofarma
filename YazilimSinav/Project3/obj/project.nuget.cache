@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "x7xlR2C1U+lhzZ18CVtZnVUZumpaMNk3O/OsqkRuFZozDD59gl3rc5RYzAl+QVi0wkVuftRW4/VMuN0nLK+PPA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\emirh\\Desktop\\YazilimSinav\\Project3\\Project3.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\emirh\\.nuget\\packages\\bootstrap\\5.1.0\\bootstrap.5.1.0.nupkg.sha512",
+    "C:\\Users\\emirh\\.nuget\\packages\\jquery\\3.6.0\\jquery.3.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}
